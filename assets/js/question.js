@@ -9,7 +9,7 @@ const quizQuestions = [
         choices: ["strings","booleans", "alerts", "numbers"],
         answer: "alerts"
     },   {
-        question: "Arrays in Javascript can be used to store ________. ",
+        question: "The condition ",
         choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
         answer: "all of the above"
     },   {
@@ -17,4 +17,4 @@ const quizQuestions = [
         choices: ["numbers and strings", "other arrays", "booleans", "all of the above"],
         answer: "all of the above"
     },
-]
+]commit?????????
