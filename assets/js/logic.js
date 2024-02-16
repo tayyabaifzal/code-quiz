@@ -1,3 +1,4 @@
+//elements referring to the html elemets
 const startBtn = document.getElementById("start");
 const timerEl = document.getElementById("time");
 const questionsContainer = document.getElementById("questions");
@@ -11,5 +12,12 @@ const endScreen = document.getElementById("end-screen");
 const feedbackEl = document.getElementById("feedback");
 const correctSound = new Audio("./assets/sfx/correct.wav");
 const incorrectSound = new Audio("./assets/sfx/incorrect.wav");
+
+
+//global elements
+let timeLeft = 120;
+let score = 0;
+let currentQuestionIndex = 0;
+let timer;
 
 
