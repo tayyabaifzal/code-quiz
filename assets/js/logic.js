@@ -54,4 +54,25 @@ function showQuestion(index) {
 }
 
 
+//function to tally the selected answer and prompt if the answer is correct or not
+function checkAnswer(index) {
+    const currentQuestion = questions[currentQuestionIndex];
+    if (currentQuestion.options[index] === currentQuestion.correctAnswer) {
+        score++ // increase score for correct answer
+        correctSound.play();
+        showfeedback("Correct!");
+    } else {
+        timeLeft -= 10; // decrease time for incorrect answer
+        timerEl.textContent = timeLeft;
+        incorrectSound.play();
+        showfeedback("Incorrect!");
+    }
+
+    currentQuestionIndex++;
+    if (currentQuestionIndex < questions.length) {
+        showQuestion(currentQuestionIndex);
+    } else {
+        endQuiz();
+
+    }
 
