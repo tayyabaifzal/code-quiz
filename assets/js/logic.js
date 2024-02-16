@@ -107,4 +107,10 @@ function showfeedback(message) {
 
 }
 
-
+//eventlistener to save the initials and scores
+submitBtn.addEventListener("click", function () {
+    const userInitial = document.getElementById("initials").value;
+    localStorage.setItem("initial", userInitial);
+    localStorage.setItem("score", score);
+    location.href = "./highscores.html"
+});
