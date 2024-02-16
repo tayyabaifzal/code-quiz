@@ -10,8 +10,6 @@ const submitBtn = document.getElementById("submit");
 const startScreen = document.getElementById("start-screen");
 const endScreen = document.getElementById("end-screen");
 const feedbackEl = document.getElementById("feedback");
-const correctSound = new Audio("./assets/sfx/correct.wav");
-const incorrectSound = new Audio("./assets/sfx/incorrect.wav");
 
 
 //global elements
@@ -20,4 +18,6 @@ let score = 0;
 let currentQuestionIndex = 0;
 let timer;
 
-
+//audio variables
+const correctSound = new Audio("./assets/sfx/correct.wav");
+const incorrectSound = new Audio("./assets/sfx/incorrect.wav");
