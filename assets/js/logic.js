@@ -100,3 +100,11 @@ function endQuiz() {
     finalScoreEl.innerText = score;
 }
 
+//function to show feedback
+function showfeedback(message) {
+    feedback.classList.remove('hide');
+    feedbackEl.innerText = message;
+
+}
+
+
