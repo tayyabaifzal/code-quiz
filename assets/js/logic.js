@@ -21,3 +21,16 @@ let timer;
 //audio variables
 const correctSound = new Audio("./assets/sfx/correct.wav");
 const incorrectSound = new Audio("./assets/sfx/incorrect.wav");
+
+//event listener to start the quiz
+startBtn.addEventListener("click", starQuiz);
+
+
+//function to start the quiz
+function starQuiz() {
+    startScreen.classList.add("hide");
+    questionsContainer.classList.remove("hide");
+    showQuestion(currentQuestionIndex);
+    startTimer();
+
+}
