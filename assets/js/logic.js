@@ -91,4 +91,12 @@ function startTimer() {
 
 }
 
+//function to end the quiz
+function endQuiz() {
+    clearInterval(timer);
+    questionsContainer.classList.add("hide");
+    endScreen.classList.remove("hide");
+    showfeedback("");
+    finalScoreEl.innerText = score;
+}
 
