@@ -76,3 +76,19 @@ function checkAnswer(index) {
 
     }
 
+}
+
+
+//function to start the timer
+function startTimer() {
+    timer = setInterval(function () {
+        if (timeLeft <= 0) {
+            endQuiz();
+        } else {
+            timerEl.textContent = timeLeft--;
+        }
+    }, 1000);
+
+}
+
+
