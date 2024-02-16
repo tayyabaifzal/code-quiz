@@ -34,3 +34,24 @@ function starQuiz() {
     startTimer();
 
 }
+
+//function to display questions
+function showQuestion(index) {
+    const currentQuestion = questions[index];
+    questionsTitleEl.innerText = currentQuestion.question;
+    choicesContainer.innerHTML = '';
+
+    currentQuestion.options.forEach((option, i) => {
+        const button = document.createElement("button");
+        button.innerText = option;
+        button.classList.add("choice-btn");
+        button.addEventListener("click", function (event) {
+            checkAnswer(i);
+
+        })
+        choicesContainer.appendChild(button);
+    });
+}
+
+
+
