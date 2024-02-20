@@ -60,7 +60,7 @@ function showQuestion(index) {
         option.innerHTML = currentQuestion.options[i];
         option.addEventListener("click", function () {
             selectedOption = this.innerHTML;
-            checkAnswer(this);
+            checkAnswer(i);
         });
         choices.appendChild(option);
     }
@@ -70,7 +70,7 @@ function showQuestion(index) {
 //function to tally the selected answer and prompt if the answer is correct or not
 function checkAnswer(index) {
     const currentQuestion = questions[currentQuestionIndex];
-    if (currentQuestion.options[index] === currentQuestion.correctAnswer) {
+    if (currentQuestion.options[index] == currentQuestion.correctAnswer) {
         score++;
         correctSound.play();
         showfeedback("Correct!");
