@@ -38,19 +38,31 @@ function starQuiz() {
 //function to display questions
 function showQuestion(index) {
     const currentQuestion = questions[index];
-    questionsTitleEl.innerText = currentQuestion.question;
-    choicesContainer.innerHTML = '';
+    questionsTitleEl.innerHTML = currentQuestion.question;
+    choices.innerHTML = "";
 
-    currentQuestion.options.forEach((option, i) => {
-        const button = document.createElement("button");
-        button.innerText = option;
-        button.classList.add("choice-btn");
-        button.addEventListener("click", function (event) {
-            checkAnswer(i);
+    for (let i = 0; i < currentQuestion.options.length; i++) {
+        let option = document.createElement("button");
+        option.innerHTML = currentQuestion.options[i];
+        option.addEventListener("click", function () {
+            selectedOption = this.innerHTML;
+            checkAnswer(this);
+        });
+        choices.appendChild(option);
+    }
+}
 
-        })
-        choicesContainer.appendChild(button);
-    });
+//function to start the timer
+function startTimer() {
+    let timer = setInterval(() => {
+        if (timeLeft > 0) {
+            timeLeft--;
+            timerEl.innerHTML = timeLeft;
+        } else {
+            clearInterval(timer);
+            console.log("Times Up!");
+        }
+    }, 1000);
 }
 
 
@@ -58,11 +70,11 @@ function showQuestion(index) {
 function checkAnswer(index) {
     const currentQuestion = questions[currentQuestionIndex];
     if (currentQuestion.options[index] === currentQuestion.correctAnswer) {
-        score++ // increase score for correct answer
+        score++
         correctSound.play();
         showfeedback("Correct!");
     } else {
-        timeLeft -= 10; // decrease time for incorrect answer
+        timeLeft -= 10;
         timerEl.textContent = timeLeft;
         incorrectSound.play();
         showfeedback("Incorrect!");
@@ -78,19 +90,6 @@ function checkAnswer(index) {
 
 }
 
-
-//function to start the timer
-function startTimer() {
-    timer = setInterval(function () {
-        if (timeLeft <= 0) {
-            endQuiz();
-        } else {
-            timerEl.textContent = timeLeft--;
-        }
-    }, 1000);
-
-}
-
 //function to end the quiz
 function endQuiz() {
     clearInterval(timer);
@@ -99,6 +98,7 @@ function endQuiz() {
     showfeedback("");
     finalScoreEl.innerText = score;
 }
+
 
 //function to show feedback
 function showfeedback(message) {

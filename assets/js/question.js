@@ -34,7 +34,7 @@ const questions = [
 
     {
         question: "What is the HTML tag under which one can write the javascript code?",
-        options: ["<javascript>", "<scripted>", "<script>", "<js>"],
+        options: ["javascript", "scripted", "script", "js"],
         correctAnswer: "<scripted>",
     },
 
