@@ -35,6 +35,20 @@ function starQuiz() {
 
 }
 
+//function to start the timer
+function startTimer() {
+    let timer = setInterval(() => {
+        if (timeLeft > 0) {
+            timeLeft--;
+            timerEl.innerHTML = timeLeft;
+        } else {
+            clearInterval(timer);
+            console.log("Times Up!");
+        }
+    }, 1000);
+}
+
+
 //function to display questions
 function showQuestion(index) {
     const currentQuestion = questions[index];
@@ -52,25 +66,12 @@ function showQuestion(index) {
     }
 }
 
-//function to start the timer
-function startTimer() {
-    let timer = setInterval(() => {
-        if (timeLeft > 0) {
-            timeLeft--;
-            timerEl.innerHTML = timeLeft;
-        } else {
-            clearInterval(timer);
-            console.log("Times Up!");
-        }
-    }, 1000);
-}
-
 
 //function to tally the selected answer and prompt if the answer is correct or not
 function checkAnswer(index) {
     const currentQuestion = questions[currentQuestionIndex];
     if (currentQuestion.options[index] === currentQuestion.correctAnswer) {
-        score++
+        score++;
         correctSound.play();
         showfeedback("Correct!");
     } else {

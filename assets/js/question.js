@@ -15,7 +15,7 @@ const questions = [
 
     {
         question: "The condition in an if/else statement is enclosed within ____.",
-        options: ["quotes", "curly brackets", "parentheses", "square brackets"],
+        options: ["quotes", "curly brackets", "parentheses", "square brackets", "all of the above"],
         correctAnswer: "all of the above",
 
     },

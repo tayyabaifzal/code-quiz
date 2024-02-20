@@ -1,7 +1,7 @@
 # Code Quiz
 
 ## Description:
-We all Find it difficult to choose a secure password. This app will help you choose a strong, secured password in just a few seconds. The app will find a password that will have a number, special character, lower and upper cased letters. You can customised the passsword as your liking by choosing for the options. 
+The application is a timed quiz of the basic javascript. The user has 120 seconds to answer multiple choice questons about basic coding. The user can enter their intials and save the score to the leaderboard at the end of the quiz. 
 
 ## Installation:
 This app requires no installation. Open the link on your device whenever you need to choose a strong, secure password.
